@@ -1,0 +1,36 @@
+
+
+<h2>Home page!</h2>
+
+
+<p>templates set properly</p>
+
+<link rel="stylesheet" type="text/css" href="/templates/css/main.css">
+
+
+<form method="POST" action='/'>
+    {% csrf_token %}
+  {{ form.title }}
+  <button type="submit" class="btn btn-success">+Add</button>
+</form>
+
+{% for todo in todos %}
+    <div>
+        <a href='{% url "edit" todo.id %}'> Edit</a>
+        <a href='{% url "delete" todo.id %}'> Delete</a>
+
+       
+       {% if todo.completed == True %}
+
+        <s>{{ todo }}</s>
+
+        {% else %}
+        <span>{{ todo }}</span>
+
+        {% endif %}
+
+
+
+    </div>
+
+{% endfor %}
