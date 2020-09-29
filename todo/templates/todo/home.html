@@ -15,19 +15,21 @@
   <button type="submit" class="btn btn-success">+Add</button>
 </form>
 
+
 {% for todo in todos %}
-    <div>
-        <a href='{% url "edit" todo.id %}'> Edit</a>
-        <a href='{% url "delete" todo.id %}'> Delete</a>
-
-       
+    <div class="container sm left">
        {% if todo.completed == True %}
-
-        <s>{{ todo }}</s>
-
+        <br>
+        <span><s>{{ todo }}</s></span>
+        
+        <a class="btn  btn-sm btn-primary" href="{% url "edit" todo.id %}" role="button">Edit</a>
+        <a class="btn  btn-sm btn-danger" href="{% url "delete" todo.id %}" role="button">Delete</a>
+            
         {% else %}
+        <br>
         <span>{{ todo }}</span>
-
+        <a class="btn btn-sm btn-primary" href="{% url "edit" todo.id %}" role="button">Edit</a>
+        <a class="btn btn-sm btn-danger" href="{% url "delete" todo.id %}" role="button">Delete</a>
         {% endif %}
 
 
