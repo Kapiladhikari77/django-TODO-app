@@ -1,9 +1,10 @@
+{% extends 'todo/base.html' %}
 
 
-<h2>Home page!</h2>
+{% block content %}
+<h2>To do list!</h2>
 
 
-<p>templates set properly</p>
 
 <link rel="stylesheet" type="text/css" href="/templates/css/main.css">
 
@@ -34,3 +35,4 @@
     </div>
 
 {% endfor %}
+{% endblock content %}
