@@ -1,10 +1,14 @@
+{% extends 'todo/base.html' %}
+{% block content %}
 <h2>Delete page</h2>
-<p>Are you sure you want to delete "{{ item }}" ?
 
-<a href="{% url 'home' %}">cancle</a>
-<form method='POST' action=''>
+<p>Are you sure you want to delete "{{ item }}" ?
+<br>
+<a class="btn btn-primary" href="{% url 'home' %}" role="button">cancle</a>
     {% csrf_token %}
 
     <button type="submit" class="btn btn-primary">confirm</button>
 
 </form>
+
+{% endblock content %}
